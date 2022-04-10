@@ -1,4 +1,4 @@
-public class appliances {
+public class Appliances {
     int power = 220;
 
     public void on() {
