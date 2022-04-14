@@ -1,4 +1,4 @@
-public class Cooker extends kitchenAppliance {
+public class Cooker extends KitchenAppliance {
     public void work() {
         String warm = "Gas";
     }
