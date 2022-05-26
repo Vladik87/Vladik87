@@ -1,0 +1,6 @@
+[DEBUG] [Main] [2022-05-23T16:33:14.230302700Z] Debug message
+[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T09:13:58.652078800Z] Created empty UserIdCounter started with 0
+[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T09:14:59.243476800Z] Created empty UserIdCounter started with 0
+[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T09:14:59.261912Z] Generated new UserIdCounter value: 1
+[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T09:14:59.262188100Z] Saved new User "1,andreiklim132,123,Andrei123,Klimovich123,1978-05-09,M,333@mail.com"
+[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T09:14:59.270723800Z] Updated User "2,andreiklim,243212,Andrei1,Klimovich1,2000-05-09,M,upd@mail.com"

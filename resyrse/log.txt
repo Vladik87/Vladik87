@@ -1,1 +1,0 @@
-[DEBUG] [Main] [2022-05-23T16:33:14.230302700Z] Debug message

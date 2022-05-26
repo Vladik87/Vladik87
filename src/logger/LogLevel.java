@@ -1,4 +1,4 @@
-package loger;
+package logger;
 
 public enum LogLevel {
     DEBUG,
