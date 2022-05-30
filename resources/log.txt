@@ -4,3 +4,20 @@
 [DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T09:14:59.261912Z] Generated new UserIdCounter value: 1
 [DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T09:14:59.262188100Z] Saved new User "1,andreiklim132,123,Andrei123,Klimovich123,1978-05-09,M,333@mail.com"
 [DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T09:14:59.270723800Z] Updated User "2,andreiklim,243212,Andrei1,Klimovich1,2000-05-09,M,upd@mail.com"
+[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T17:18:53.412164500Z] Created UserIdCounter with initial value: 1
+[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T17:18:53.417652Z] Generated new UserIdCounter value: 2
+[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T17:18:53.419119900Z] Saved new User "2,root,root,Andrei123,Klimovich123,1978-05-09,M,333@mail.com"
+[INFO] [session.Session] [2022-05-26T17:19:11.970358200Z] Создана сессия с root
+[INFO] [ui.UI] [2022-05-26T17:19:11.971037200Z] Успешый вход
+[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T17:19:18.259679500Z] Created UserIdCounter with initial value: 2
+[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T17:19:18.263861400Z] Generated new UserIdCounter value: 3
+[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T17:19:18.264980400Z] Saved new User "3,root,root,Andrei123,Klimovich123,1978-05-09,M,333@mail.com"
+[INFO] [ui.UI] [2022-05-26T17:19:30.361658Z] Введены неверные данные
+[DEBUG] [storage.impl.UserRepoImpl] [2022-05-29T16:32:31.982221400Z] Created UserIdCounter with initial value: 3
+[DEBUG] [storage.impl.UserRepoImpl] [2022-05-29T16:32:31.992734700Z] Generated new UserIdCounter value: 4
+[DEBUG] [storage.impl.UserRepoImpl] [2022-05-29T16:32:31.993849200Z] Saved new User "4,root,root,Andrei123,Klimovich123,1978-05-09,M,333@mail.com"
+[INFO] [session.Session] [2022-05-29T16:32:46.534200500Z] Создана сессия с root
+[INFO] [ui.UI] [2022-05-29T16:32:46.534200500Z] Успешый вход
+[DEBUG] [storage.impl.UserRepoImpl] [2022-05-29T16:32:51.664930900Z] Created UserIdCounter with initial value: 4
+[DEBUG] [storage.impl.UserRepoImpl] [2022-05-29T16:32:51.668920100Z] Generated new UserIdCounter value: 5
+[DEBUG] [storage.impl.UserRepoImpl] [2022-05-29T16:32:51.669931400Z] Saved new User "5,root,root,Andrei123,Klimovich123,1978-05-09,M,333@mail.com"

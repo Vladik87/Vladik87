@@ -1,8 +1,9 @@
 package storage.impl;
 
-import convertor.UserConverter;
+import converter.UserConverter;
 import dto.User;
 import logger.Logger;
+import storage.UserRepo;
 
 import java.io.*;
 import java.util.List;
@@ -12,6 +13,8 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
 public class UserRepoImpl implements UserRepo {
+
+    // TODO Можно сделать кэш юзеров при старте
 
     private static final Logger log = Logger.getInstance();
     private final static String USERS_FILE = "./resources/users.csv";
@@ -35,7 +38,7 @@ public class UserRepoImpl implements UserRepo {
                 log.debug(this.getClass(), "Created empty UserIdCounter started with 0");
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error(this.getClass(), e.getMessage());
         }
     }
 
@@ -55,21 +58,21 @@ public class UserRepoImpl implements UserRepo {
                     .map(UserConverter::toObject)
                     .findFirst();
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error(this.getClass(), e.getMessage());
             return Optional.empty();
         }
     }
 
     @Override
-    public void save(final User user) {
+    public User save(final User user) {
         if (user.getId() == null) {
-            insert(user);
+            return insert(user);
         } else {
-            update(user);
+            return update(user);
         }
     }
 
-    private void insert(final User user) {
+    private User insert(final User user) {
         try (FileWriter fileWriter = new FileWriter(USERS_FILE, true);
              BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
              PrintWriter printWriter = new PrintWriter(bufferedWriter)) {
@@ -80,12 +83,14 @@ public class UserRepoImpl implements UserRepo {
             String csvString = UserConverter.toCsvString(user);
             printWriter.println(csvString);
             log.debug(this.getClass(), "Saved new User \"%s\"".formatted(csvString));
+            return user;
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error(this.getClass(), e.getMessage());
+            return null;
         }
     }
 
-    private void update(final User user) {
+    private User update(final User user) {
         try (FileReader reader = new FileReader(USERS_FILE);
              BufferedReader bufferedReader = new BufferedReader(reader)) {
 
@@ -111,8 +116,10 @@ public class UserRepoImpl implements UserRepo {
             }
             log.debug(this.getClass(), "Updated User \"%s\"".formatted(csvString));
 
+            return user;
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error(this.getClass(), e.getMessage());
+            return null;
         }
     }
 }

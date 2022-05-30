@@ -1,7 +1,8 @@
-package convertor;
+package converter;
 
 import dto.Sex;
 import dto.User;
+import service.UserValidationRequest;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -39,6 +40,17 @@ public class UserConverter {
         user.setSex(Sex.valueOf(strings[i++]));
         user.setEmail(strings[i++]);
 
+        return user;
+    }
+    public static User toObject(final UserValidationRequest request){
+        User user = new User();
+        user.setUserName(request.userName());
+        user.setPassword(request.password());
+        user.setFirstName(request.firstName());
+        user.setLastName(request.lastName());
+        user.setBirthDate(LocalDate.parse(request.birthDate(),DateTimeFormatter.ISO_LOCAL_DATE));
+        user.setSex(Sex.valueOf(request.sex()));
+        user.setEmail(request.email());
         return user;
     }
 
