@@ -3,6 +3,7 @@ package storage.impl;
 import converter.UserConverter;
 import dto.User;
 import logger.Logger;
+import storage.AccountRepo;
 import storage.UserRepo;
 
 import java.io.*;
@@ -17,7 +18,8 @@ public class UserRepoImpl implements UserRepo {
     // TODO Можно сделать кэш юзеров при старте
 
     private static final Logger log = Logger.getInstance();
-    private final static String USERS_FILE = "./resources/users.csv";
+    private static final String USERS_FILE = "D:\\Bank\\Bank\\resources\\users.csv";
+    private static final AccountRepo accountRepo = AccountRepoImpl.getInstance();
     private static UserRepo instance;
 
     private AtomicLong userIdCounter;
@@ -28,7 +30,7 @@ public class UserRepoImpl implements UserRepo {
 
             OptionalLong maxUserId = bufferedReader.lines()
                     .map(line -> line.split(",")[0]) // first element is id
-                    .mapToLong(Long::parseLong)
+                    .mapToLong(java.lang.Long::parseLong)
                     .max();
             if (maxUserId.isPresent()) {
                 userIdCounter = new AtomicLong(maxUserId.getAsLong());
@@ -53,10 +55,14 @@ public class UserRepoImpl implements UserRepo {
     public Optional<User> findByUserName(final String userName) {
         try (FileReader reader = new FileReader(USERS_FILE);
              BufferedReader bufferedReader = new BufferedReader(reader)) {
-            return bufferedReader.lines()
+            Optional<User> userOptional = bufferedReader.lines()
                     .filter(line -> line.split(",")[1].equals(userName)) // second element is username
                     .map(UserConverter::toObject)
                     .findFirst();
+
+            userOptional.ifPresent(u -> u.setAccount(accountRepo.findByUserId(u.getId()).orElse(null)));
+
+            return userOptional;
         } catch (IOException e) {
             log.error(this.getClass(), e.getMessage());
             return Optional.empty();

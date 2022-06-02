@@ -12,6 +12,7 @@ public class User {
     private LocalDate birthDate;
     private Sex sex;
     private String email;
+    private Account account;
 
     public User() {
     }
@@ -101,5 +102,13 @@ public class User {
 
     public void setEmail(final String email) {
         this.email = email;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(final Account account) {
+        this.account = account;
     }
 }

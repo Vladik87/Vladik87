@@ -10,7 +10,7 @@ public class Logger {
 
     // TODO add log level from properties
     private static Logger instance;
-    private final String LOG_FILE_PATH = "./resources/log.txt";
+    private final String LOG_FILE_PATH = "D:\\Bank\\Bank\\resources\\log.txt";
 
     private Logger() {}
 

@@ -1,23 +1,27 @@
-[DEBUG] [Main] [2022-05-23T16:33:14.230302700Z] Debug message
-[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T09:13:58.652078800Z] Created empty UserIdCounter started with 0
-[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T09:14:59.243476800Z] Created empty UserIdCounter started with 0
-[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T09:14:59.261912Z] Generated new UserIdCounter value: 1
-[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T09:14:59.262188100Z] Saved new User "1,andreiklim132,123,Andrei123,Klimovich123,1978-05-09,M,333@mail.com"
-[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T09:14:59.270723800Z] Updated User "2,andreiklim,243212,Andrei1,Klimovich1,2000-05-09,M,upd@mail.com"
-[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T17:18:53.412164500Z] Created UserIdCounter with initial value: 1
-[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T17:18:53.417652Z] Generated new UserIdCounter value: 2
-[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T17:18:53.419119900Z] Saved new User "2,root,root,Andrei123,Klimovich123,1978-05-09,M,333@mail.com"
-[INFO] [session.Session] [2022-05-26T17:19:11.970358200Z] Создана сессия с root
-[INFO] [ui.UI] [2022-05-26T17:19:11.971037200Z] Успешый вход
-[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T17:19:18.259679500Z] Created UserIdCounter with initial value: 2
-[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T17:19:18.263861400Z] Generated new UserIdCounter value: 3
-[DEBUG] [storage.impl.UserRepoImpl] [2022-05-26T17:19:18.264980400Z] Saved new User "3,root,root,Andrei123,Klimovich123,1978-05-09,M,333@mail.com"
-[INFO] [ui.UI] [2022-05-26T17:19:30.361658Z] Введены неверные данные
-[DEBUG] [storage.impl.UserRepoImpl] [2022-05-29T16:32:31.982221400Z] Created UserIdCounter with initial value: 3
-[DEBUG] [storage.impl.UserRepoImpl] [2022-05-29T16:32:31.992734700Z] Generated new UserIdCounter value: 4
-[DEBUG] [storage.impl.UserRepoImpl] [2022-05-29T16:32:31.993849200Z] Saved new User "4,root,root,Andrei123,Klimovich123,1978-05-09,M,333@mail.com"
-[INFO] [session.Session] [2022-05-29T16:32:46.534200500Z] Создана сессия с root
-[INFO] [ui.UI] [2022-05-29T16:32:46.534200500Z] Успешый вход
+
 [DEBUG] [storage.impl.UserRepoImpl] [2022-05-29T16:32:51.664930900Z] Created UserIdCounter with initial value: 4
 [DEBUG] [storage.impl.UserRepoImpl] [2022-05-29T16:32:51.668920100Z] Generated new UserIdCounter value: 5
 [DEBUG] [storage.impl.UserRepoImpl] [2022-05-29T16:32:51.669931400Z] Saved new User "5,root,root,Andrei123,Klimovich123,1978-05-09,M,333@mail.com"
+[ERROR] [storage.impl.UserRepoImpl] [2022-05-30T15:36:27.760560200Z] .\resources\users.csv (Системе не удается найти указанный путь)
+[ERROR] [storage.impl.UserRepoImpl] [2022-05-30T15:41:19.463403200Z] .\resources\users.csv (Системе не удается найти указанный путь)
+[ERROR] [storage.impl.UserRepoImpl] [2022-05-30T15:44:09.146542100Z] .\resources\users.csv (Системе не удается найти указанный путь)
+[ERROR] [storage.impl.AccountRepoImpl] [2022-06-02T14:42:05.434306800Z] .\resources\accounts.csv (Системе не удается найти указанный путь)
+[DEBUG] [storage.impl.UserRepoImpl] [2022-06-02T14:42:05.443151700Z] Created empty UserIdCounter started with 0
+[DEBUG] [storage.impl.UserRepoImpl] [2022-06-02T14:43:00.273970900Z] Generated new UserIdCounter value: 1
+[DEBUG] [storage.impl.UserRepoImpl] [2022-06-02T14:43:00.273970900Z] Saved new User "1,Vlad1,555555,Vlad,Romanov,1987-03-19,M,vlad@bk.ry"
+[INFO] [session.Session] [2022-06-02T14:43:00.274591200Z] Создана сессия с Vlad1
+[ERROR] [storage.impl.AccountRepoImpl] [2022-06-02T14:43:23.479178500Z] .\resources\accounts.csv (Системе не удается найти указанный путь)
+[INFO] [service.AccountService] [2022-06-02T14:43:23.480313100Z] Создан счет для пользователя 1
+[ERROR] [storage.impl.AccountRepoImpl] [2022-06-02T14:43:46.738984900Z] .\resources\accounts.csv (Системе не удается найти указанный путь)
+[INFO] [service.AccountService] [2022-06-02T14:43:46.740267400Z] Создан счет для пользователя 1
+[ERROR] [storage.impl.AccountRepoImpl] [2022-06-02T14:44:46.070216700Z] .\resources\accounts.csv (Системе не удается найти указанный путь)
+[INFO] [service.AccountService] [2022-06-02T14:44:46.070216700Z] Создан счет для пользователя 1
+[DEBUG] [storage.impl.AccountRepoImpl] [2022-06-02T14:53:13.918768600Z] Created empty accountIdCounter started with 0
+[DEBUG] [storage.impl.UserRepoImpl] [2022-06-02T14:53:13.933718200Z] Created UserIdCounter with initial value: 1
+[INFO] [session.Session] [2022-06-02T14:53:28.838914900Z] Создана сессия с Vlad1
+[INFO] [ui.UI] [2022-06-02T14:53:28.838914900Z] Успешный вход для Vlad1
+[DEBUG] [storage.impl.AccountRepoImpl] [2022-06-02T14:53:34.901485Z] Generated new accountIdCounter value: 1
+[DEBUG] [storage.impl.AccountRepoImpl] [2022-06-02T14:53:34.901485Z] Saved new Account "1,0,1"
+[INFO] [service.AccountService] [2022-06-02T14:53:34.902657100Z] Создан счет для пользователя 1
+[DEBUG] [storage.impl.AccountRepoImpl] [2022-06-02T14:53:49.897689200Z] Updated Account "1,5659,1"
+[INFO] [service.AccountService] [2022-06-02T14:53:49.897689200Z] Внесено 5659 на счет 1  пользователя 1

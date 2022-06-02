@@ -31,7 +31,7 @@ public class UserConverter {
         int i = 0;
 
         User user = new User();
-        user.setId(Long.parseLong(strings[i++]));
+        user.setId(java.lang.Long.parseLong(strings[i++]));
         user.setUserName(strings[i++]);
         user.setPassword(strings[i++]);
         user.setFirstName(strings[i++]);
@@ -42,62 +42,18 @@ public class UserConverter {
 
         return user;
     }
-    public static User toObject(final UserValidationRequest request){
+
+    public static User toObject(final UserValidationRequest request) {
         User user = new User();
         user.setUserName(request.userName());
         user.setPassword(request.password());
         user.setFirstName(request.firstName());
         user.setLastName(request.lastName());
-        user.setBirthDate(LocalDate.parse(request.birthDate(),DateTimeFormatter.ISO_LOCAL_DATE));
+        user.setBirthDate(LocalDate.parse(request.birthDate(), DateTimeFormatter.ISO_LOCAL_DATE));
         user.setSex(Sex.valueOf(request.sex()));
         user.setEmail(request.email());
+
         return user;
     }
 
-    private class UserCsvBuilder {
-        private final StringBuilder sb;
-
-        public UserCsvBuilder() {
-            sb = new StringBuilder();
-        }
-
-        public String build() {
-            return sb.toString();
-        }
-
-        public UserCsvBuilder id(final Long userId) {
-            sb.append(userId).append(",");
-            return this;
-        }
-
-        public UserCsvBuilder userName(final String username) {
-            sb.append(username).append(",");
-            return this;
-        }
-
-        public UserCsvBuilder firstName(final String firstName) {
-            sb.append(firstName).append(",");
-            return this;
-        }
-
-        public UserCsvBuilder lastName(final String lastName) {
-            sb.append(lastName).append(",");
-            return this;
-        }
-
-        public UserCsvBuilder birthDate(final LocalDate birthDate) {
-            sb.append(birthDate.format(DateTimeFormatter.ISO_LOCAL_DATE)).append(",");
-            return this;
-        }
-
-        public UserCsvBuilder sex(final Sex sex) {
-            sb.append(sex).append(",");
-            return this;
-        }
-
-        public UserCsvBuilder email(final String email) {
-            sb.append(email);
-            return this;
-        }
-    }
 }
